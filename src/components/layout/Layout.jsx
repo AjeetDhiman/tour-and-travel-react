@@ -4,7 +4,7 @@ import Navbar from "../header/Navbar";
 
 const Layout = () => {
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="font-dm-sans flex min-h-screen flex-col antialiased">
       <Navbar />
       <main className="flex-1">
         <Outlet />

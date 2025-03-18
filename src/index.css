@@ -3,22 +3,38 @@
 @theme {
   --font-dm-sans: "DM Sans", sans-serif;
   --font-playfair: "Playfair Display", serif;
-  --color-secondary: #333333;
+  --color-secondary: hsl(0, 0%, 20%);
+  --color-accent: #000;
+  --color-gray: hsl(0, 0%, 50%);
 }
+
 @layer utilities {
+  .container {
+    @apply mx-auto px-[1.2rem];
+  }
   @media (width >= 80rem) {
     .container {
-      @apply mx-auto max-w-[77.5rem];
+      @apply max-w-[80rem];
     }
+  }
+  a {
+    @apply duration-300 ease-in-out;
+  }
+  section {
+    @apply py-[3.125rem] lg:py-[6.25rem];
   }
 }
 
 @layer base {
   .section-heading {
-    @apply w-1/2 text-[2rem]/8 md:text-[4rem]/16;
+    @apply w-full text-[2.5rem]/8 md:text-[4rem]/16 lg:w-1/2;
   }
 
   .section-heading span {
     @apply font-playfair text-secondary leading-[51.2px] italic;
   }
+}
+
+footer a {
+  @apply mb-2 text-[var(--color-gray)] hover:text-white;
 }

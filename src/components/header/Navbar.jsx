@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
-import { Link } from "react-router";
+import { NavLink, useLocation } from "react-router";
 import { motion, AnimatePresence } from "framer-motion";
 import Logo from "./Logo";
 import Button from "../ui/Button";
@@ -8,6 +8,10 @@ import Button from "../ui/Button";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 1024);
+  const location = useLocation();
+
+  const isHomePage = location.pathname.replace(/\/+$/, "") === "";
+  const iconColor = isHomePage ? "text-white" : "text-black";
 
   useEffect(() => {
     const handleResize = () => {
@@ -29,11 +33,30 @@ const Navbar = () => {
     };
   }, [isOpen]);
 
+  const pageURL = [
+    {
+      url: "/",
+      title: "trips",
+    },
+    {
+      url: "/gallery",
+      title: "gallery",
+    },
+    {
+      url: "/about",
+      title: "about",
+    },
+    {
+      url: "/contact",
+      title: "contact",
+    },
+  ];
+
   return (
-    <header>
-      <nav className="bg-red-400">
+    <header className={`z-50 ${isHomePage ? "bg-transparent" : "bg-white"}`}>
+      <nav>
         <div className="container mx-auto">
-          <div className="flex flex-row items-center justify-between px-3 py-4 xl:px-0 xl:py-8">
+          <div className="flex flex-row items-center justify-between py-4 xl:py-8">
             <Logo />
             <AnimatePresence>
               {!isDesktop && isOpen && (
@@ -67,31 +90,26 @@ const Navbar = () => {
                     <X size={24} />
                   </Button>
                 )}
-                <div className="flex flex-col gap-y-4 lg:flex-row lg:gap-x-[36px] xl:gap-x-[72px]">
-                  <Link
-                    className="text-base font-medium lg:font-normal"
-                    to="/trips"
-                  >
-                    Trips
-                  </Link>
-                  <Link
-                    className="text-base font-medium lg:font-normal"
-                    to="/gallery"
-                  >
-                    Gallery
-                  </Link>
-                  <Link
-                    className="text-base font-medium lg:font-normal"
-                    to="/about"
-                  >
-                    About
-                  </Link>
-                  <Link
-                    className="text-base font-medium lg:font-normal"
-                    to="/contact"
-                  >
-                    Contact
-                  </Link>
+                <div
+                  className={`flex flex-col gap-y-4 lg:flex-row lg:gap-x-[36px] xl:gap-x-[72px] ${isDesktop && isHomePage ? "text-white" : "text-black"}`}
+                >
+                  {pageURL.map((link, index) => (
+                    <NavLink
+                      key={index}
+                      to={link.url}
+                      className={({ isActive }) => {
+                        const isActiveState =
+                          isDesktop && isActive ? "after:w-full" : "after:w-0";
+                        const activeColor =
+                          !isDesktop && isActive
+                            ? "text-[var(--color-accent)]"
+                            : "";
+                        return `relative text-base font-medium capitalize transition-all duration-300 ease-in-out after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-current after:transition-all after:duration-300 after:ease-in-out hover:after:left-0 focus:after:left-0 sm:active:w-0 lg:font-normal lg:hover:after:w-full lg:focus:after:w-full lg:active:after:left-0 ${isActiveState} ${activeColor}`;
+                      }}
+                    >
+                      {link.title}
+                    </NavLink>
+                  ))}
                 </div>
               </motion.div>
             </AnimatePresence>
@@ -108,7 +126,11 @@ const Navbar = () => {
                   exit={{ rotate: 90, opacity: 0 }}
                   transition={{ duration: 0.2 }}
                 >
-                  {isOpen ? <X size={24} /> : <Menu size={24} />}
+                  {isOpen ? (
+                    <X size={24} className={iconColor} />
+                  ) : (
+                    <Menu size={24} className={iconColor} />
+                  )}
                 </motion.div>
               </Button>
             )}
