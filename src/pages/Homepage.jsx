@@ -1,8 +1,59 @@
 import { Link } from "react-router";
 import Heading from "../components/misc/Heading";
-import homepagebanner from "../assets/img/homepage-banner.png";
+import homepagebanner from "../assets/img/homepage-banner.jpg";
 import { MoveRight } from "lucide-react";
+import ImageCard from "../components/misc/imagecard/ImageCard";
+import PackageImg1 from "../assets/img/packages/package-1.jpg";
+import LocationPriceWrapper from "../components/misc/imagecard/LocationPriceWrapper";
+
 const Homepage = () => {
+  const packages = [
+    {
+      to: "/",
+      src: PackageImg1,
+      alt: "Valley of Flowers Image",
+      width: "298",
+      height: "401",
+      title: "Title Lorem ipsum dolor ",
+      itenary: "7 days, 6 nights",
+      location: "Chamoli, Uttarakhand",
+      price: "$700",
+    },
+    {
+      to: "/",
+      src: PackageImg1,
+      alt: "Valley of Flowers Image",
+      width: "298",
+      height: "401",
+      title: "second image",
+      itenary: "2 days, 1 nights",
+      location: "Chamoli, Uttarakhand",
+      price: "$700",
+    },
+    {
+      to: "/",
+      src: PackageImg1,
+      alt: "Valley of Flowers Image",
+      width: "298",
+      height: "401",
+      title: "Third image",
+      itenary: "3 days, 2 nights",
+      location: "Chamoli, Uttarakhand",
+      price: "$700",
+    },
+    {
+      to: "/",
+      src: PackageImg1,
+      alt: "Valley of Flowers Image",
+      width: "298",
+      height: "401",
+      title: "Fourth image",
+      itenary: "4 days, 3 nights",
+      location: "Chamoli, Uttarakhand",
+      price: "$700",
+    },
+  ];
+
   return (
     <>
       <div
@@ -38,7 +89,7 @@ const Homepage = () => {
       </div>
       <section>
         <div className="container">
-          <div className="flex flex-col items-center justify-between lg:flex-row">
+          <div className="mb-12 flex flex-col items-center justify-between lg:flex-row">
             <Heading>
               Must <span>experience</span> packages
             </Heading>
@@ -51,6 +102,45 @@ const Homepage = () => {
                 See All Packages
               </Link>
             </div>
+          </div>
+          <div className="grid grid-cols-1 gap-4 gap-x-4 gap-y-4 sm:grid-cols-2 lg:grid-cols-4">
+            {packages &&
+              packages.map((pack, index) => {
+                const {
+                  to,
+                  src,
+                  alt,
+                  width,
+                  height,
+                  title,
+                  itenary,
+                  location,
+                  price,
+                } = pack;
+
+                return (
+                  <ImageCard to={to} key={index}>
+                    <ImageCard.Image
+                      src={src}
+                      alt={alt}
+                      width={width}
+                      height={height}
+                    />
+                    <ImageCard.Content>
+                      <ImageCard.Title>{title}</ImageCard.Title>
+                      <ImageCard.Itenary iconEnable={true}>
+                        {itenary}
+                      </ImageCard.Itenary>
+                      <ImageCard.Wrapper>
+                        <ImageCard.Location iconEnable={true}>
+                          {location}
+                        </ImageCard.Location>
+                        <ImageCard.Price>{price}</ImageCard.Price>
+                      </ImageCard.Wrapper>
+                    </ImageCard.Content>
+                  </ImageCard>
+                );
+              })}
           </div>
         </div>
       </section>
