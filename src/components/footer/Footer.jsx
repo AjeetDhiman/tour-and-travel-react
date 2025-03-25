@@ -1,10 +1,11 @@
+import Container from "../misc/Container";
 import { Link } from "react-router";
 import { Phone, MapPin } from "lucide-react";
 
 const Footer = () => {
   return (
     <footer className="bg-black py-8 lg:py-[4rem]">
-      <div className="container">
+      <Container>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4">
           <div className="mb-4 lg:mb-0">
             <h4 className="mb-3 text-white">Discover</h4>
@@ -74,7 +75,7 @@ const Footer = () => {
             <p className="text-gray">Copyright © 2025</p>
           </div>
         </div>
-      </div>
+      </Container>
     </footer>
   );
 };

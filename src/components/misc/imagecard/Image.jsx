@@ -2,7 +2,7 @@ import clsx from "clsx";
 import PropTypes from "prop-types";
 import { twMerge } from "tailwind-merge";
 
-const Image = ({ src, alt, width, height, className }) => {
+const Image = ({ src, alt, width, height, className, ...props }) => {
   return (
     <img
       src={src}
@@ -10,6 +10,7 @@ const Image = ({ src, alt, width, height, className }) => {
       width={width}
       height={height}
       className={twMerge(clsx("h-full w-full object-cover", className))}
+      {...props}
     />
   );
 };
