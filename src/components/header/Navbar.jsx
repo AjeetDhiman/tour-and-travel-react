@@ -1,9 +1,12 @@
 import { useState, useEffect } from "react";
+import { NavLink, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
-import { NavLink, useLocation } from "react-router";
 import { motion, AnimatePresence } from "framer-motion";
+import { twMerge } from "tailwind-merge";
+import clsx from "clsx";
 import Logo from "./Logo";
 import Button from "../ui/Button";
+import Container from "../misc/Container";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -35,7 +38,7 @@ const Navbar = () => {
 
   const pageURL = [
     {
-      url: "/",
+      url: "/trips",
       title: "trips",
     },
     {
@@ -51,11 +54,12 @@ const Navbar = () => {
       title: "contact",
     },
   ];
+  const baseStyle = `relative text-base font-medium capitalize transition-all duration-300 ease-in-out after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-current after:transition-all after:duration-300 after:ease-in-out hover:after:left-0 focus:after:left-0 lg:font-normal lg:hover:after:w-full lg:focus:after:w-full `;
 
   return (
     <header className={`z-50 ${isHomePage ? "bg-transparent" : "bg-white"}`}>
       <nav>
-        <div className="container mx-auto">
+        <Container>
           <div className="flex flex-row items-center justify-between py-4 xl:py-8">
             <Logo />
             <AnimatePresence>
@@ -93,23 +97,22 @@ const Navbar = () => {
                 <div
                   className={`flex flex-col gap-y-4 lg:flex-row lg:gap-x-[36px] xl:gap-x-[72px] ${isDesktop && isHomePage ? "text-white" : "text-black"}`}
                 >
-                  {pageURL.map((link, index) => (
-                    <NavLink
-                      key={index}
-                      to={link.url}
-                      className={({ isActive }) => {
-                        const isActiveState =
-                          isDesktop && isActive ? "after:w-full" : "after:w-0";
-                        const activeColor =
-                          !isDesktop && isActive
-                            ? "text-[var(--color-accent)]"
-                            : "";
-                        return `relative text-base font-medium capitalize transition-all duration-300 ease-in-out after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-current after:transition-all after:duration-300 after:ease-in-out hover:after:left-0 focus:after:left-0 sm:active:w-0 lg:font-normal lg:hover:after:w-full lg:focus:after:w-full lg:active:after:left-0 ${isActiveState} ${activeColor}`;
-                      }}
-                    >
-                      {link.title}
-                    </NavLink>
-                  ))}
+                  {pageURL.map((link, index) => {
+                    return (
+                      <NavLink
+                        key={index}
+                        to={link.url}
+                        className={({ isActive }) =>
+                          clsx(baseStyle, {
+                            "after:w-full": isActive && isDesktop,
+                            "text-red-500": isActive && !isDesktop,
+                          })
+                        }
+                      >
+                        {link.title}
+                      </NavLink>
+                    );
+                  })}
                 </div>
               </motion.div>
             </AnimatePresence>
@@ -135,7 +138,7 @@ const Navbar = () => {
               </Button>
             )}
           </div>
-        </div>
+        </Container>
       </nav>
     </header>
   );

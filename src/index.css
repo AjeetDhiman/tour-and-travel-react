@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+
 @import "tailwindcss";
 
 @theme {
@@ -6,12 +8,10 @@
   --color-secondary: hsl(0, 0%, 20%);
   --color-accent: #000;
   --color-gray: hsl(0, 0%, 50%);
+  --color-light-gray: hsl(0, 0%, 95%);
 }
 
 @layer utilities {
-  .container {
-    @apply mx-auto px-[1.2rem];
-  }
   @media (width >= 80rem) {
     .container {
       @apply max-w-[80rem];
@@ -20,21 +20,39 @@
   a {
     @apply duration-300 ease-in-out;
   }
-  section {
-    @apply py-[3.125rem] lg:py-[6.25rem];
-  }
 }
 
 @layer base {
   .section-heading {
-    @apply w-full text-[2.5rem]/8 md:text-[4rem]/16 lg:w-1/2;
+    @apply w-full text-[2.5rem]/10 md:text-[4rem]/16 lg:w-[30rem];
   }
 
   .section-heading span {
-    @apply font-playfair text-secondary leading-[51.2px] italic;
+    @apply font-playfair text-secondary px-2 italic;
+  }
+  .breadcrumb:has(h1, h2) {
+    @apply text-white;
+  }
+  .breadcrumb :is(h1, h2) > span {
+    @apply text-white;
   }
 }
 
 footer a {
   @apply mb-2 text-[var(--color-gray)] hover:text-white;
+}
+
+.testimonails .swiper-wrapper {
+  @apply pb-12;
+}
+.testimonails .swiper-pagination-bullets {
+  bottom: 0 !important;
+}
+
+.testimonails .swiper-pagination-bullets .swiper-pagination-bullet {
+  @apply h-3.5 w-3.5 bg-[#222]/40;
+}
+
+.testimonails .swiper-pagination-bullets .swiper-pagination-bullet-active {
+  @apply h-3.5 w-3.5 bg-[#222];
 }
