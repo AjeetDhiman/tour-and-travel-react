@@ -8,58 +8,58 @@ const Footer = () => {
       <Container>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4">
           <div className="mb-4 lg:mb-0">
-            <h4 className="mb-3 text-white">Discover</h4>
+            <h3 className="mb-3 text-white">Discover</h3>
             <ul>
               <li>
-                <Link to="/">About Us</Link>
+                <Link to="/about-us">About Us</Link>
               </li>
               <li>
-                <Link to="/">Trip Packages</Link>
+                <Link to="/trips">Trip Packages</Link>
               </li>
               <li>
-                <Link to="/">Gallery</Link>
+                <Link to="/gallery">Gallery</Link>
               </li>
               <li>
-                <Link to="/">Licenses</Link>
+                <Link to="/lincenses">Licenses</Link>
               </li>
             </ul>
           </div>
           <div className="mb-4 lg:mb-0">
-            <h4 className="mb-3 text-white">Packages</h4>
+            <h3 className="mb-3 text-white">Packages</h3>
             <ul>
               <li>
-                <Link to="/">Tropical Paradise</Link>
+                <Link to="/tropical-paradise">Tropical Paradise</Link>
               </li>
               <li>
-                <Link to="/">Cruise Getaway</Link>
+                <Link to="/cruise-getaway">Cruise Getaway</Link>
               </li>
               <li>
-                <Link to="/">Cultural Morocco</Link>
+                <Link to="/cultural-morocco">Cultural Morocco</Link>
               </li>
               <li>
-                <Link to="/">River Expedition</Link>
+                <Link to="/river-expedition">River Expedition</Link>
               </li>
             </ul>
           </div>
           <div className="mb-4 lg:mb-0">
-            <h4 className="mb-3 text-white">Treks</h4>
+            <h3 className="mb-3 text-white">Treks</h3>
             <ul>
               <li>
-                <Link to="/">Mountain Adventure</Link>
+                <Link to="/mountain-adventure">Mountain Adventure</Link>
               </li>
               <li>
-                <Link to="/">Wildlife Safari</Link>
+                <Link to="/wildlife-safari">Wildlife Safari</Link>
               </li>
               <li>
-                <Link to="/">Roma Adventure</Link>
+                <Link to="/roma-adventure">Roma Adventure</Link>
               </li>
               <li>
-                <Link to="/">Amazon Expedition</Link>
+                <Link to="/amazon-expedition">Amazon Expedition</Link>
               </li>
             </ul>
           </div>
           <div className="sm:mb-4 lg:mb-0">
-            <h4 className="mb-3 text-white">Contact</h4>
+            <h3 className="mb-3 text-white">Contact</h3>
             <Link
               to="mailto:+91"
               className="mb-3 flex flex-row items-center gap-1"
