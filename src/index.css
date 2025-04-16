@@ -26,7 +26,6 @@
   .section-heading {
     @apply w-full text-[2.5rem]/10 md:text-[4rem]/16 lg:w-[30rem];
   }
-
   .section-heading span {
     @apply font-playfair text-secondary px-2 italic;
   }

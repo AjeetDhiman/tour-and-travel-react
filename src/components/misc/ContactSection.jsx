@@ -62,7 +62,7 @@ const ContactSection = () => {
         </p>
         <Card className="z-10 mx-auto mb-0 max-w-[54.25rem] border-0 bg-white p-12 lg:mb-[5.975rem]">
           <form onSubmit={contact}>
-            <div className="mb-3 grid grid-cols-1 gap-5 text-start sm:mb-5 sm:grid-cols-2">
+            <div className="mb-4 grid grid-cols-1 gap-4 text-start sm:mb-5 sm:grid-cols-2 sm:gap-5">
               <div>
                 <div>
                   <label htmlFor="sendername" className="mb-2 block">
@@ -97,7 +97,7 @@ const ContactSection = () => {
                 {error && <Error>{errorMessage}</Error>}
               </div>
             </div>
-            <div className="mb-4 text-start">
+            <div className="mb-5 text-start">
               <div>
                 <label htmlFor="email" className="mb-2 block">
                   Email
