@@ -6,10 +6,18 @@ import TourPackage from "../assets/img/breadcrumb/tour-packages.jpg";
 import { lgpackages } from "../components/misc/data";
 import ImageCard from "../components/misc/imagecard/ImageCard";
 import ContactSection from "../components/misc/ContactSection";
+import Heading from "../components/misc/Heading";
 const TripsPage = () => {
   return (
     <>
-      <Breadcrumb bg={TourPackage} />
+      <Breadcrumb bg={TourPackage}>
+        <Heading
+          as="h1"
+          className="relative w-full text-[2.5rem] sm:text-[5rem]"
+        >
+          Tour <span>Packages</span>
+        </Heading>
+      </Breadcrumb>
       <Section className="mb-12 py-0 md:mb-[6.25rem] lg:py-0">
         <Container>
           <div className="grid grid-cols-1 gap-4 gap-x-5 gap-y-8 sm:grid-cols-2 lg:grid-cols-4">

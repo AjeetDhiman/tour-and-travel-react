@@ -60,7 +60,7 @@ const Navbar = () => {
       clsx(
         "relative text-base font-medium capitalize",
         "lg:font-normal lg:px-4 lg:py-[5px] rounded-[50px]",
-        "transition-all duration-300 ease-in-out outline-2 outline-transparent outline-offset-0",
+        "transition-all duration-300 ease-in-out outline-1 outline-transparent outline-offset-0",
 
         {
           "text-white": isHomePage,

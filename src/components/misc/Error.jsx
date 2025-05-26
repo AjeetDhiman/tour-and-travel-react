@@ -4,7 +4,7 @@ import { twMerge } from "tailwind-merge";
 
 const Error = ({ className, children }) => {
   return (
-    <div className={twMerge(clsx("mt-2 text-red-500", className))}>
+    <div className={twMerge(clsx("mt-2 text-red-500 empty:hidden", className))}>
       {children}
     </div>
   );

@@ -5,10 +5,10 @@
 @theme {
   --font-dm-sans: "DM Sans", sans-serif;
   --font-playfair: "Playfair Display", serif;
-  --color-secondary: hsl(0, 0%, 20%);
+  --color-secondary: hsl(0, 0%, 20%); /*333333*/
   --color-accent: #000;
-  --color-gray: hsl(0, 0%, 50%);
-  --color-light-gray: hsl(0, 0%, 95%);
+  --color-gray: hsl(0, 0%, 50%); /*808080*/
+  --color-light-gray: hsl(0, 0%, 95%); /*#f2f2f2*/
 }
 
 @layer utilities {
@@ -17,7 +17,8 @@
       @apply max-w-[80rem];
     }
   }
-  a {
+  a,
+  button {
     @apply duration-300 ease-in-out;
   }
 }
@@ -37,6 +38,9 @@
   }
 }
 
+p {
+  @apply text-secondary;
+}
 footer a {
   @apply mb-2 text-[var(--color-gray)] hover:text-white;
 }

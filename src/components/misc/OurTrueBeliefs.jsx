@@ -14,7 +14,7 @@ const OurTrueBeliefs = () => {
               Our true <span>beliefs</span> for <span>your</span> benefits
             </Heading>
             <div className="lg:max-w-[419.96px]">
-              <p className="text-secondary my-[1.75rem]">
+              <p className="my-[1.75rem]">
                 Our beliefs aren't just words; they are the foundation of every
                 adventure we offer. With high commitment to sustainability,
                 authenticity, and customer-centricity, we ensure that every trip
@@ -40,7 +40,11 @@ const OurTrueBeliefs = () => {
 
                       <div className="grow text-center sm:text-start">
                         <h3 className="font-bold">{belief.heading}</h3>
-                        <p>{belief.content}</p>
+                        <p
+                          className={`${index % 2 !== 0 ? "text-gray!" : "text-black!"}`}
+                        >
+                          {belief.content}
+                        </p>
                       </div>
                     </div>
                   </Card>

@@ -3,47 +3,54 @@ import Error from "./Error";
 
 const AsideForm = () => {
   return (
-    <form>
-      <div className="block w-full underline">
+    <div>
+      <div className="block w-full">
         <h2 className="block font-bold">Message</h2>
       </div>
-      <div>
-        <label htmlFor="name" className="block">
-          Name
-        </label>
-        <input
-          type="text"
-          id="name"
-          className="rounded-full border border-current"
-        />
+      <hr className="mt-1 w-full border-2 border-black" />
+      <form className="sm:mt-10 mt-6">
+        <div className="mb-2.5">
+          <label htmlFor="name" className="mb-3.5 block font-bold">
+            Name
+          </label>
+          <input
+            type="text"
+            id="name"
+            className="h-[39px] w-full rounded-full border border-current"
+          />
 
-        <Error className="my-1">Name is required</Error>
-      </div>
-      <div>
-        <label htmlFor="emailaddress" className="block">
-          Email Address
-        </label>
-        <input
-          type="text"
-          id="emailaddress"
-          className="rounded-full border border-current"
-        />
-        <Error className="my-1">Email Address is required</Error>
-      </div>
-      <div>
-        <label htmlFor="message" className="block">
-          Message
-        </label>
-        <textarea id="message" className="rounded-2xl border"></textarea>
-        <Error className="my-1">Message is required</Error>
-      </div>
-      <button
-        type="submit"
-        className="border border-current bg-black text-white hover:bg-white hover:text-black w-full rounded-full py-2.5 px-4"
-      >
-        Submit
-      </button>
-    </form>
+          <Error className="my-1"></Error>
+        </div>
+        <div className="mb-2.5">
+          <label htmlFor="emailaddress" className="mb-3.5 block font-bold">
+            Email Address
+          </label>
+          <input
+            type="text"
+            id="emailaddress"
+            className="h-[39px] w-full rounded-full border border-current"
+          />
+          <Error className="my-1"></Error>
+        </div>
+        <div className="mb-2.5">
+          <label htmlFor="message" className="mb-3.5 block font-bold">
+            Message
+          </label>
+          <textarea
+            id="message"
+            className="rounded-2xl border w-full"
+            rows={8}
+          ></textarea>
+          <Error className="my-1"></Error>
+        </div>
+        <button
+          type="submit"
+          className="w-full cursor-pointer rounded-full border border-current bg-black px-4 py-2.5 text-white hover:bg-white hover:text-black"
+        >
+          Submit
+        </button>
+      </form>
+    </div>
   );
 };
 

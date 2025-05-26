@@ -4,6 +4,10 @@ import Priya from "../../assets/img/testimonials/priya.jpg";
 import Jose from "../../assets/img/testimonials/jose.jpg";
 import Angellina from "../../assets/img/testimonials/angellina.jpg";
 import Last from "../../assets/img/testimonials/last.jpg";
+import AnitaPatel from "/anita-patel.jpg";
+import Smith from "/smith.jpg";
+import Olivia from "/olivia.jpg";
+
 export const packages = [
   {
     to: "/",
@@ -197,5 +201,32 @@ export const lgpackages = [
     itenary: "4 days, 3 nights",
     location: "Chamoli, Uttarakhand",
     price: "$700",
+  },
+];
+
+export const teams = [
+  {
+    src: AnitaPatel,
+    alt: "Anita Patel",
+    width: "298",
+    height: "401",
+    pname: "Anita Patel",
+    designation: "Founder & CEO",
+  },
+  {
+    src: Smith,
+    alt: "Smith Xander",
+    width: "298",
+    height: "401",
+    pname: "Smith Xander",
+    designation: "Travel Specialist",
+  },
+  {
+    src: Olivia,
+    alt: "Olivia Martinez",
+    width: "298",
+    height: "401",
+    pname: "Olivia Martinez",
+    designation: "Marketing Manager",
   },
 ];
