@@ -7,7 +7,7 @@ import clsx from "clsx";
 import Logo from "./Logo";
 import Button from "../ui/Button";
 import Container from "../misc/Container";
-import { navItemVariant } from "../misc/transition";
+import { navItemVariant } from "../misc/Transition.js";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
