@@ -12,7 +12,7 @@ import {
   animateLeft,
   animateRight,
   animateCard,
-} from "../components/misc/Transition.js";
+} from "../components/misc/transition.js";
 import AboutCompany from "/about-company.jpg";
 import journeyctavideo from "/journey-cta-video.jpg";
 import ContactSection from "../components/misc/ContactSection";

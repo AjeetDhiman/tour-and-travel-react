@@ -16,7 +16,7 @@ import {
   animateLeft,
   animateRight,
   animateCard,
-} from "../components/misc/Transition.js";
+} from "../components/misc/transition.js";
 const Homepage = () => {
   return (
     <>
