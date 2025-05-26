@@ -153,6 +153,7 @@ const Homepage = () => {
         variants={animateLeft(0.6)}
         initial="hidden"
         whileInView="visible"
+        viewport={{ once: true }}
       >
         <OurTrueBeliefs />
       </motion.div>
@@ -173,7 +174,9 @@ const Homepage = () => {
               <Heading className="mb-6 w-full">
                 Our <span className="text-white">Journey</span> in pictures
               </Heading>
-              <p>See what makes each experience with our trips exceptional.</p>
+              <p className="text-white!">
+                See what makes each experience with our trips exceptional.
+              </p>
             </motion.div>
           </div>
         </Container>

@@ -68,7 +68,7 @@ const Testimonials = ({ testimonials }) => {
 
                     <div className="grow text-center sm:text-start">
                       <h3 className="mb-2.5 font-bold">{testimonial.name}</h3>
-                      <p>{testimonial.place}</p>
+                      <p className="text-black!">{testimonial.place}</p>
                     </div>
                   </div>
                 </Card>

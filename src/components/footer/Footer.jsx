@@ -67,12 +67,12 @@ const Footer = () => {
               <Phone className="me-1" size={16} />
               +91 0000000000
             </Link>
-            <p className="text-gray flex flex-row items-stretch gap-1">
+            <p className="text-gray! flex flex-row items-stretch gap-1">
               <MapPin className="me-1" /> 123 lorem isum dior comet,
               Uttarakhand.
             </p>
-            <hr className="text-gray mt-6 mb-5" />
-            <p className="text-gray">Copyright © 2025</p>
+            <hr className="text-gray! mt-6 mb-5" />
+            <p className="text-gray!">Copyright © 2025</p>
           </div>
         </div>
       </Container>
