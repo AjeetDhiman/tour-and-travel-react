@@ -200,7 +200,10 @@ const TourDetail = () => {
                 <h2 className="mb-5 text-[2rem] font-bold">Travel Plans</h2>
                 {TravelPlan.map((travel, index) => {
                   return (
-                    <div className="mb-3 flex flex-col rounded-lg border py-3 ps-6 pe-2.5 sm:flex-row sm:gap-24 sm:ps-12 sm:pe-5 lg:mb-6 lg:py-6">
+                    <div
+                      key={index}
+                      className="mb-3 flex flex-col rounded-lg border py-3 ps-6 pe-2.5 sm:flex-row sm:gap-24 sm:ps-12 sm:pe-5 lg:mb-6 lg:py-6"
+                    >
                       <span className="font-bold">{travel.travel_day}</span>
                       <p>{travel.travel_desc}</p>
                     </div>

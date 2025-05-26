@@ -1,5 +1,3 @@
-import React from "react";
-import { motion } from "framer-motion";
 import { Link } from "react-router";
 import { MoveRight, MapPin } from "lucide-react";
 import Heading from "../components/misc/Heading";
@@ -7,12 +5,6 @@ import Breadcrumb from "../components/misc/Breadcrumb";
 import Section from "../components/misc/Section";
 import Container from "../components/misc/Container";
 import OurTrueBeliefs from "../components/misc/OurTrueBeliefs";
-import {
-  animateFadeUp,
-  animateLeft,
-  animateRight,
-  animateCard,
-} from "../components/misc/transition.js";
 import AboutCompany from "/about-company.jpg";
 import journeyctavideo from "/journey-cta-video.jpg";
 import ContactSection from "../components/misc/ContactSection";
@@ -80,38 +72,23 @@ const AboutPage = () => {
               backgroundImage: `url(${journeyctavideo})`,
             }}
           >
-            <motion.div
-              variants={animateFadeUp(1)}
-              initial="hidden"
-              animate="visible"
-              className="px-2.5 pt-5 text-end sm:pe-5 lg:pe-10 lg:pt-10"
-            >
+            <div className="px-2.5 pt-5 text-end sm:pe-5 lg:pe-10 lg:pt-10">
               <p className="flex flex-wrap justify-center gap-1 text-center sm:justify-end sm:gap-2">
                 <MapPin /> Location Mountain Strait, Any State.
               </p>
-            </motion.div>
-            <motion.div
-              variants={animateFadeUp(1)}
-              initial="hidden"
-              animate="visible"
-              className="absolute bottom-4 left-0 h-auto w-full text-white lg:left-10"
-            >
+            </div>
+            <div className="absolute bottom-4 left-0 h-auto w-full text-white lg:left-10">
               <Heading className="mb-6 w-full">
                 Our <span className="text-white">Journey</span> in videos
               </Heading>
-            </motion.div>
+            </div>
           </div>
         </Container>
       </Section>
 
       <Section className="lg:pt-0">
         <Container>
-          <motion.div
-            variants={animateFadeUp(0.6)}
-            initial="hidden"
-            animate="visible"
-            className="mb-3 flex flex-col items-center justify-between will-change-transform lg:mb-12 lg:flex-row"
-          >
+          <div className="mb-3 flex flex-col items-center justify-between will-change-transform lg:mb-12 lg:flex-row">
             <Heading>
               Our <span>passionate</span> teammates
             </Heading>
@@ -121,21 +98,14 @@ const AboutPage = () => {
                 travel enthusiasts.
               </p>
             </div>
-          </motion.div>
+          </div>
           <div className="grid grid-cols-1 gap-4 gap-x-4 gap-y-4 sm:grid-cols-2 lg:grid-cols-3">
             {teams &&
               teams.map((team, index) => {
                 const { src, alt, width, height } = team;
 
                 return (
-                  <motion.div
-                    key={index}
-                    custom={index}
-                    variants={animateCard}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true }}
-                  >
+                  <div key={index}>
                     <ImageCard key={index}>
                       <ImageCard.Image
                         src={src}
@@ -150,7 +120,7 @@ const AboutPage = () => {
                       </h3>
                       <p>{team.designation}</p>
                     </div>
-                  </motion.div>
+                  </div>
                 );
               })}
           </div>
