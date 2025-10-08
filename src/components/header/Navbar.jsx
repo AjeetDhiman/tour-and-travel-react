@@ -60,9 +60,9 @@ const Navbar = () => {
         "lg:font-normal lg:px-4 lg:py-[5px] rounded-[50px]",
         "transition-all duration-300 ease-in-out outline-1 outline-transparent outline-offset-0",
         {
-          "text-white": isHomePage && isDesktop, // white only desktop home
+          "text-white": isHomePage && isDesktop,
           "text-black": isDesktop && !isHomePage,
-          "text-black": !isDesktop && !isHomePage, // optional: black mobile non-homepage
+          "text-black": !isDesktop && !isHomePage,
           "hover:text-red-600": !isDesktop,
           "lg:hover:text-white": isDesktop,
           "lg:hover:outline-white": isDesktop && isHomePage,

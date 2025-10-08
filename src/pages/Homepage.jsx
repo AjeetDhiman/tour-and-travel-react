@@ -10,9 +10,11 @@ import journeycta from "../assets/img/journey-cta.jpg";
 import ContactSection from "../components/misc/ContactSection.jsx";
 import OurTrueBeliefs from "../components/misc/OurTrueBeliefs.jsx";
 import Testimonials from "../components/misc/Testimonials.jsx";
+import PreloadImage from "../components/misc/PreloadImage.jsx";
 const Homepage = () => {
   return (
     <>
+      <PreloadImage href={homepagebanner} />
       <div
         className="z-auto -mt-[6.2rem] bg-cover bg-center bg-no-repeat pt-[8.1rem] pb-[4.45rem]"
         style={{
