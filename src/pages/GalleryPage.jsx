@@ -172,14 +172,14 @@ const GalleryPage = () => {
             </SwiperSlide>
             <button
               ref={prevRef}
-              className="absolute top-1/2 left-0 z-10 flex h-10 w-10 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-black p-2 text-white shadow"
+              className="absolute top-1/2 left-2 z-10 flex h-10 w-10 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-black p-2 text-white shadow"
             >
               <MoveLeft size={18} />
             </button>
 
             <button
               ref={nextRef}
-              className="absolute top-1/2 right-0 z-10 flex h-10 w-10 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-black p-2 text-white shadow"
+              className="absolute top-1/2 right-2 z-10 flex h-10 w-10 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-black p-2 text-white shadow"
             >
               <MoveRight size={18} />
             </button>

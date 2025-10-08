@@ -59,10 +59,10 @@ const Navbar = () => {
         "relative text-base font-medium capitalize",
         "lg:font-normal lg:px-4 lg:py-[5px] rounded-[50px]",
         "transition-all duration-300 ease-in-out outline-1 outline-transparent outline-offset-0",
-
         {
-          "text-white": isHomePage,
+          "text-white": isHomePage && isDesktop, // white only desktop home
           "text-black": isDesktop && !isHomePage,
+          "text-black": !isDesktop && !isHomePage, // optional: black mobile non-homepage
           "hover:text-red-600": !isDesktop,
           "lg:hover:text-white": isDesktop,
           "lg:hover:outline-white": isDesktop && isHomePage,
@@ -89,7 +89,7 @@ const Navbar = () => {
             <div
               className={`${
                 isDesktop ? "relative flex-row" : "fixed top-0 left-0 z-50"
-              } min-h-screen min-w-3xs bg-white px-4 pt-12 pb-4 shadow lg:min-h-auto lg:w-auto lg:bg-transparent lg:p-0 lg:shadow-none`}
+              } min-h-screen min-w-3xs bg-white px-4 pt-12 pb-4 shadow transition-transform duration-300 ease-in-out lg:min-h-auto lg:w-auto lg:bg-transparent lg:p-0 lg:shadow-none ${!isDesktop ? (isOpen ? "translate-x-0" : "-translate-x-full") : ""}`}
             >
               {!isDesktop && (
                 <Button
